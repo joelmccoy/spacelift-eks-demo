@@ -1,6 +1,6 @@
 module "vpc" {
   source                        = "terraform-aws-modules/vpc/aws"
-  version                       = "5.1.3"
+  version                       = "5.13.0"
   name                          = "vpc-serverless"
   cidr                          = "176.24.0.0/16"
   azs                           = ["us-west-1a", "us-west-1b", "us-west-1c"]
