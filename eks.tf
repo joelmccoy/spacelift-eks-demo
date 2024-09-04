@@ -4,7 +4,7 @@ module "eks-cluster" {
   cluster_name    = "eks-serverless"
   cluster_version = "1.30"
 
-  vpc_id = module.vpc.outputs.vpc_id
+  vpc_id = module.vpc.vpc_id
 
   // Fargate profiles here
   fargate_profiles = {
