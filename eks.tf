@@ -8,7 +8,17 @@ module "eks-cluster" {
 
   // Fargate profiles here
   fargate_profiles = {
-    eks_cluster_name = "eks-fargate-cluster"
-    subnets          = [module.vpc.outputs.public_subnets, module.vpc.outputs.private_subnets]
+    fargate_profile_1 = {
+      name     = "fargate-profile"
+      subnets  = module.vpc.private_subnets
+      selectors = [
+        {
+          namespace = "default"
+          labels = {
+            environment = "dev"
+          }
+        }
+      ]
+    }
   }
 }
